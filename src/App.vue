@@ -6,12 +6,7 @@ import Sidenav from "./components/Sidenav.vue";
 <template>
   <div class="common-layout">
     <el-container>
-      <el-aside width="200px">
-        <Sidenav />
-      </el-aside>
-      <el-main>
-        <RouterView />
-      </el-main>
+        <router-view></router-view>
     </el-container>
   </div>
 </template>
