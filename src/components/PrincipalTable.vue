@@ -76,6 +76,8 @@ const filterHandler = (
   column: TableColumnCtx<User>
 ) => {
   const property = column["property"];
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-expect-error
   return row[property] === value;
 };
 

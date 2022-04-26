@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import ListVue from "@/components/List.vue";
 </script>
 
 <template>
   <main>
-    <ListVue />
+    <p> list</p>
   </main>
 </template>
