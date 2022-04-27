@@ -1,42 +1,38 @@
-<script setup lang="ts">
-import { RouterView, useRouter } from "vue-router";
-import Sidenav from "@/components/Sidenav.vue";
-import { onMounted } from "vue";
-
-const route = useRouter();
-let isRoot = true;
-
-onMounted(() => {
-  route.afterEach((to, from) => {
-    if (to.fullPath === "/" && from.fullPath === "/") {
-      isRoot = true;
-    } else {
-      isRoot = false;
-    }
-  });
-});
-</script>
-
 <template>
-  <template v-if="isRoot">
-    <router-view />
-  </template>
-  <template v-else>
     <div class="main-layout">
-      <div class="sidenav">
-        <sidenav />
-      </div>
       <div>
         <div class="header"></div>
-        <div class="main">
           <div class="content">
             <router-view />
           </div>
-        </div>
       </div>
     </div>
-  </template>
 </template>
+
+<script lang="ts">
+import { useRouter } from "vue-router";
+import { defineComponent, computed } from "vue";
+
+export default defineComponent({
+  name: 'App',
+  components: {  },
+  setup() {
+    const route = useRouter()
+    const getRoot = computed(() => {
+      route.afterEach((to, from) => {
+        console.log(to.fullPath)
+        if (to.fullPath === "/" && from.fullPath === "/") {
+          return true;
+        } else {
+          return false;
+        }
+      })
+    })
+    console.log(getRoot)
+  }
+}
+)
+</script>
 
 <style>
 @import "@/assets/base.scss";
