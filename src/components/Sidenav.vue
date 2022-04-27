@@ -38,8 +38,8 @@ const handleClose = (key: string, keyPath: string[]) => {
 
 <style>
 .el-menu-vertical-demo {
-  height: 100vh;
-  width: 75px;
+  height: 100%;
+  width: 100%;
 }
 
 .el-menu-vertical-demo:not(.el-menu--collapse) {

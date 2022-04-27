@@ -4,10 +4,9 @@
       <el-col :sm="24" :md="12" :lg="12" :xl="12">
         <div class="content-title">
           <h1 class="home-title">
-           Organiza y optimiza el comportamiento de los gastos de tu edificio
+            Organiza y optimiza el comportamiento de los gastos de tu edificio
           </h1>
-          <RouterLink
-          :to="'/buildings'">
+          <RouterLink :to="'/buildings'">
             <el-button type="success" class="btn-home">Comenzar</el-button>
           </RouterLink>
         </div>
@@ -25,30 +24,28 @@
 <style>
 /* home */
 
-.home-bg{
-    background-color: #ffffff;
-    height: 100vh;
+.home-bg {
+  background-color: #ffffff;
+  height: 100vh;
 }
 
-.home-title{
-    font-size: 2.4em;
-    font-weight: 600;
-    font-family: 'Muli',sans-serif;
-    -webkit-font-smoothing: antialiased;
-    color: #172B4D;
-    line-height: 60px;
+.home-title {
+  font-size: 2.4em;
+  font-weight: 600;
+  font-family: "Muli", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #172b4d;
+  line-height: 60px;
 }
 
-
-.content-title{
-    margin-top: calc(70% - 230px);
-    width: 80%;
-    margin-left: 10%; 
+.content-title {
+  margin-top: calc(70% - 230px);
+  width: 80%;
+  margin-left: 10%;
 }
 
-.btn-home{
-    height: 60px;
-    width: 200px;
+.btn-home {
+  height: 60px;
+  width: 200px;
 }
-
 </style>
