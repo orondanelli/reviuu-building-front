@@ -24,4 +24,9 @@ const router = createRouter({
   ],
 });
 
+router.beforeEach((to, from, next) => {
+  console.log(`Navigating to: ${to.name?.toString()}`);
+  next();
+});
+
 export default router;

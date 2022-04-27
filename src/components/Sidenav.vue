@@ -1,4 +1,5 @@
 <template>
+<div class="sidenav">
   <el-menu
     default-active="2"
     class="el-menu-vertical-demo"
@@ -23,6 +24,7 @@
       </el-menu-item>
     </routerLink>
   </el-menu>
+  </div>
 </template>
 
 <script lang="ts" setup>
