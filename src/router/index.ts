@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Devices from "@/views/Devices.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,7 +11,8 @@ const router = createRouter({
     {
       path: "/devices",
       name: "devices",
-      component: Devices,
+      component: () => import("@/views/Devices.vue"),
+      meta: { layout: "Devices" },
     },
     {
       path: "/buildings",
@@ -20,6 +20,7 @@ const router = createRouter({
       components: {
         default: () => import("@/views/Buildings.vue"),
       },
+      meta: { layout: "Buildings" },
     },
   ],
 });

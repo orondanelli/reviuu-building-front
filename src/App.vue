@@ -1,37 +1,19 @@
 <template>
-    <div class="main-layout">
-      <div>
-        <div class="header"></div>
-          <div class="content">
-            <router-view />
-          </div>
-      </div>
-    </div>
+  <main>
+    <AppLayout />
+  </main>
 </template>
 
 <script lang="ts">
-import { useRouter } from "vue-router";
-import { defineComponent, computed } from "vue";
+import { defineComponent } from "vue";
+import AppLayout from "@/layouts/AppLayout.vue";
 
 export default defineComponent({
-  name: 'App',
-  components: {  },
-  setup() {
-    const route = useRouter()
-    const getRoot = computed(() => {
-      route.afterEach((to, from) => {
-        console.log(to.fullPath)
-        if (to.fullPath === "/" && from.fullPath === "/") {
-          return true;
-        } else {
-          return false;
-        }
-      })
-    })
-    console.log(getRoot)
-  }
-}
-)
+  name: "App",
+  components: {
+    AppLayout,
+  },
+});
 </script>
 
 <style>
@@ -42,7 +24,7 @@ export default defineComponent({
   margin: 0;
 }
 
-.main-layout {
+main {
   display: flex;
   background-color: #f8f8f8;
 }
@@ -64,5 +46,6 @@ export default defineComponent({
 
 .content {
   padding: 0 15px;
+  width: 100%;
 }
 </style>
